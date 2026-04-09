@@ -31,7 +31,7 @@ export default function Dashboard() {
   const totalDiscrepancyValue = settlements
     .filter(s => s.status === 'DISCREPANCY')
     .reduce((sum, s) => {
-      return sum + s.discrepancies?.reduce((a, d) => a + Math.abs(d.expectedValue - d.actualValue), 0) || 0
+      return sum + (s.discrepancies?.reduce((a, d) => a + Math.abs(d.expectedValue - d.actualValue), 0) || 0)
     }, 0)
 
   const handleTrigger = async () => {
@@ -71,7 +71,6 @@ export default function Dashboard() {
         </div>
       )}
 
-      {/* Summary Cards */}
       <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '32px' }}>
         <Card label="Total Settlements" value={settlements.length} color="#3b82f6" />
         <Card label="Matched" value={matched} color="#22c55e" />
@@ -80,7 +79,6 @@ export default function Dashboard() {
         <Card label="Total Discrepancy Value" value={`₹${totalDiscrepancyValue.toFixed(0)}`} color="#8b5cf6" />
       </div>
 
-      {/* Last Job Info */}
       <div style={{ background: 'white', borderRadius: '12px', padding: '24px', boxShadow: '0 1px 4px rgba(0,0,0,0.08)', marginBottom: '24px' }}>
         <h2 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '16px' }}>Last Reconciliation Job</h2>
         {lastJob ? (
@@ -103,7 +101,6 @@ export default function Dashboard() {
         )}
       </div>
 
-      {/* Notification Summary */}
       <div style={{ background: 'white', borderRadius: '12px', padding: '24px', boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
         <h2 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '16px' }}>Notification Summary</h2>
         <div style={{ display: 'flex', gap: '32px' }}>

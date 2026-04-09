@@ -61,7 +61,6 @@ export default function Settlements() {
     <div>
       <h1 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '24px' }}>Settlements</h1>
 
-      {/* Upload */}
       <div style={{ background: 'white', borderRadius: '12px', padding: '24px', boxShadow: '0 1px 4px rgba(0,0,0,0.08)', marginBottom: '24px' }}>
         <h2 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '16px' }}>Upload Settlement File</h2>
         <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
@@ -75,7 +74,6 @@ export default function Settlements() {
         {uploadMsg && <p style={{ marginTop: '12px', color: uploadMsg.startsWith('✅') ? '#16a34a' : '#dc2626' }}>{uploadMsg}</p>}
       </div>
 
-      {/* Filter Tabs */}
       <div style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
         {['ALL', 'MATCHED', 'DISCREPANCY', 'PENDING_REVIEW'].map(s => (
           <button key={s} onClick={() => setFilter(s)}
@@ -94,7 +92,6 @@ export default function Settlements() {
         </button>
       </div>
 
-      {/* Table */}
       <div style={{ background: 'white', borderRadius: '12px', boxShadow: '0 1px 4px rgba(0,0,0,0.08)', overflow: 'hidden' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
           <thead>
@@ -128,7 +125,6 @@ export default function Settlements() {
         </table>
       </div>
 
-      {/* Discrepancy Detail Modal */}
       {detail && (
         <div style={{
           position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,

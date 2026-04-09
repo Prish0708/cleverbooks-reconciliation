@@ -21,7 +21,6 @@ export default function Notifications() {
     <div>
       <h1 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '24px' }}>Notification Delivery Log</h1>
 
-      {/* Filter Tabs */}
       <div style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
         {['ALL', 'SENT', 'FAILED', 'RETRYING'].map(s => (
           <button key={s} onClick={() => setFilter(s)}

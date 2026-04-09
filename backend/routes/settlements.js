@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const papa = require('papaparse');
-const { v4: uuidv4 } = require('uuid');
+const { randomUUID } = require('crypto');
 const Settlement = require('../models/Settlement');
 const Order = require('../models/Order');
 
@@ -11,7 +11,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 // POST /api/settlements/upload
 router.post('/upload', upload.single('file'), async (req, res) => {
   try {
-    const batchId = req.body.batchId || uuidv4();
+    const batchId = req.body.batchId || randomUUID();
 
     // Idempotency check
     const existing = await Settlement.findOne({ batchId });

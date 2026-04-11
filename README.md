@@ -115,7 +115,7 @@ The seed script generates:
 
 ## Loom Walkthrough
 
-[Add Loom link here after recording]
+https://www.loom.com/share/24d27494bee14252ad62d7f1138243dd
 
 ---
 
